@@ -1,147 +1,52 @@
-# SecureBank AI Assistant
+# Import AI — Import/Export Compliance Checker
 
-A modern, Perplexity-inspired frontend for a banking chatbot built with Angular 17. This application provides a clean, professional interface for customers to interact with an AI-powered banking assistant.
+## Overview:
+This AI system is designed to analyze trade-related queries and check for compliance with import/export laws. It evaluates provided data against international trade regulations, country-specific restrictions, and licensing requirements.
 
-## Features
+## Key Compliance Factors:
+1. **Legal Restrictions** – Identifies banned, restricted, or dual-use goods.
+2. **Regulatory Requirements** – Checks necessary permits, licenses, or certifications.
+3. **Tariffs and Duties** – Highlights customs duties or additional taxes.
+4. **Country-Specific Rules** – Ensures compliance with both exporting and importing country laws.
+5. **Documentation** – Reviews paperwork like **bills of lading, commercial invoices, certificates of origin**, etc.
+6. **Sanctions and Trade Embargoes** – Flags trade restrictions imposed by governments or international bodies.
 
-- 🤖 **Intelligent Chat Interface** - Clean, modern chat UI inspired by Perplexity
-- 🏦 **Banking-Focused** - Specialized for banking queries and transactions
-- 📱 **Responsive Design** - Works seamlessly on desktop and mobile devices
-- 🎨 **Modern UI/UX** - Professional design with smooth animations
-- 🚀 **Fast Performance** - Built with Angular 17 standalone components
-- 🔒 **Security First** - Banking-grade security considerations
+## Risk Categories:
+- **✅ Compliant** – Meets all legal and regulatory requirements.
+- **⚠️ Needs Review** – Some conditions need to be clarified or additional paperwork is required.
+- **🚨 Non-Compliant** – Violates trade regulations or lacks proper approvals.
 
-## Tech Stack
+## Common Trade Compliance Issues:
+### 🚨 **Restricted or Banned Goods**:
+- **Example 1:** Exporting **semiconductors from the U.S. to China** without a BIS export license.
+- **Example 2:** Importing **pharmaceuticals into the EU** without meeting EMA (European Medicines Agency) regulations.
+- **Example 3:** Shipping **weapons or military-grade equipment** to embargoed countries.
 
-- **Angular 17** - Latest Angular with standalone components
-- **TypeScript** - Type-safe development
-- **CSS Variables** - Modern styling with custom properties
-- **Font Awesome** - Professional icons
-- **Inter Font** - Clean, modern typography
+### ⚠️ **Missing Permits or Certifications**:
+- **Example 4:** Exporting **medical devices from India to the U.S.** without FDA approval.
+- **Example 5:** Importing **agricultural products into Japan** without phytosanitary certification.
+- **Example 6:** Trading **alcoholic beverages internationally** without proper excise tax documents.
 
-## Getting Started
+### 🚨 **Sanctions & Trade Embargoes**:
+- **Example 7:** Attempting to export **commercial goods to North Korea** (prohibited under UN sanctions).
+- **Example 8:** Selling **high-tech AI software** to restricted companies on the U.S. Entity List.
+- **Example 9:** Shipping **dual-use technology** (civilian/military use) without ITAR compliance.
 
-### Prerequisites
+### ⚠️ **Documentation Errors**:
+- **Example 10:** Incomplete **certificate of origin** causing shipment delays.
+- **Example 11:** Mismatched **invoice values** triggering customs audits.
+- **Example 12:** Incorrect **tariff classification (HS Code)** leading to unexpected duties.
 
-- Node.js (v18 or higher)
-- npm or yarn package manager
+## How to Use:
+- Provide trade details (e.g., item description, source & destination countries, trade purpose).
+- Include any known legal restrictions or regulations.
+- If necessary, attach documents for review.
+- The AI will assess risks and provide recommendations.
 
-### Installation
+## Important Considerations:
+- Some regulations change frequently, so always verify with relevant authorities.
+- Compliance rules vary by industry and product type.
+- The system provides **guidance**, but final decisions should be based on official trade policies.
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd bank-chatbot-frontend
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm run serve
-   ```
-
-4. Open your browser and navigate to `http://localhost:4200`
-
-## Project Structure
-
-```
-src/
-├── app/
-│   ├── components/
-│   │   ├── header/           # Main header component
-│   │   ├── message/          # Individual chat message component
-│   │   └── quick-actions/    # Quick action buttons
-│   ├── chat/                 # Main chat interface
-│   ├── models/              # TypeScript interfaces
-│   ├── services/            # Angular services
-│   └── app.component.ts     # Root component
-├── styles.css               # Global styles
-└── index.html              # Main HTML file
-```
-
-## Features Overview
-
-### Chat Interface
-- Real-time messaging with typing indicators
-- Message history with timestamps
-- Smooth animations and transitions
-- Auto-scroll to latest messages
-
-### Quick Actions
-- Pre-defined banking queries
-- Visual action cards with icons
-- One-click message sending
-
-### Responsive Design
-- Mobile-first approach
-- Adaptive layout for all screen sizes
-- Touch-friendly interactions
-
-### Banking Functionality
-- Account balance inquiries
-- Money transfer assistance
-- Loan and credit information
-- Investment guidance
-- Card services support
-- Customer support routing
-
-## Available Scripts
-
-- `npm run serve` - Start development server with auto-reload
-- `npm run build` - Build for production
-- `npm run watch` - Build and watch for changes
-- `npm run test` - Run unit tests
-
-## Customization
-
-### Styling
-The application uses CSS custom properties for easy theming. Main color variables are defined in `src/styles.css`:
-
-```css
-:root {
-  --primary-blue: #1e40af;
-  --secondary-blue: #3b82f6;
-  --text-primary: #1f2937;
-  /* ... more variables */
-}
-```
-
-### Banking Responses
-Modify the `generateAIResponse()` method in `chat.component.ts` to customize AI responses based on banking keywords.
-
-### Quick Actions
-Update the `actions` array in `quick-actions.component.ts` to add or modify quick action buttons.
-
-## Security Considerations
-
-- Client-side validation for all inputs
-- Secure message handling
-- No sensitive data stored in localStorage
-- HTTPS-ready for production deployment
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License.
-
-## Support
-
-For support and questions, please contact our development team or create an issue in the repository. 
+## Timestamp:
+The current timestamp is automatically included in every request to ensure the latest compliance data is used. 
