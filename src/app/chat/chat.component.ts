@@ -21,12 +21,12 @@ import { ChatService } from '../services/chat.service';
             </div>
             <h2 class="welcome-title">Import AI</h2>
             <p class="welcome-description">
-              Your AI-powered import/export compliance checker. Analyze goods, routes, and documentation against global trade rules.
+              Your AI-powered import/export assistant. Analyze goods, routes, and documentation for global trade.
             </p>
             <div class="compliance-badges">
               <span class="badge">HS Codes</span>
-              <span class="badge">Licensing</span>
-              <span class="badge">Sanctions</span>
+              <span class="badge">Tariffs</span>
+              <span class="badge">Country Rules</span>
               <span class="badge">Docs Review</span>
             </div>
             <app-quick-actions (actionSelected)="handleQuickAction($event)"></app-quick-actions>
@@ -64,7 +64,7 @@ import { ChatService } from '../services/chat.service';
               #messageInput
               [(ngModel)]="currentMessage"
               (keydown.enter)="handleKeyDown($event)"
-              placeholder="Ask about HS codes, licenses, sanctions, country rules, or required documents..."
+              placeholder="Ask about HS codes, tariffs, country rules, routes, or required documents..."
               class="message-input"
               rows="1"
               [disabled]="isTyping"
@@ -80,7 +80,7 @@ import { ChatService } from '../services/chat.service';
           <div class="input-footer">
             <div class="powered-by">
               <i class="fas fa-globe"></i>
-              <span>Powered by Import AI • Trade Compliance Assistant</span>
+              <span>Powered by Import AI • Trade Assistant</span>
             </div>
           </div>
         </div>
@@ -154,7 +154,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
 
   private getHistoryForApi(): Array<{ role: string; content: string }> {
     return this.messages.map(m => ({ role: m.sender === 'user' ? 'user' : 'assistant', content: m.content })).slice(-10);
-  }
+    }
 
   sendMessage(): void {
     if (!this.currentMessage.trim() || this.isTyping) return;
