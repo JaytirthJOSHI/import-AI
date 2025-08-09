@@ -61,7 +61,7 @@ export class MessageComponent {
   @Input() message!: Message;
 
   constructor(private sanitizer: DomSanitizer) {
-    marked.setOptions({ mangle: false, headerIds: true, breaks: true });
+    marked.setOptions({ headerIds: true, breaks: true });
   }
 
   getRenderedContent(message: Message): SafeHtml {
